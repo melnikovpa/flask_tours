@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Все туры {{ departure_name }}:</h1>
+
+    {% if tours|length > 0 %}
+        {% for key, tour in tours.items() %}
+            <p>{{tour.country}}: <a href="/data/tours/{{ key }}/">{{ tour.title }} {{ tour.price }} {{ tour.stars }}* </a></p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
